@@ -506,9 +506,18 @@ Class ZSAnimator : Thinker
 	bool forceDisableInterpolation;
 	Array<ZSAnimation> currentAnimations;
 	
-	static ZSAnimation GetAnimationFromClassName(Class<ZSanimation> animationClass)
+/* 	static ZSAnimation GetAnimationFromClassName(Class<ZSanimation> animationClass)
 	{
 		let anim = ZSAnimation(New(animationClass));
+		anim.Initialize();
+		anim.MakeFrameList();
+		anim.LinkList();
+		return anim;
+	} */
+
+	static ZSAnimation GetAnimation(string animName)
+	{
+		let anim = ZSAnimation(New("ZSAnimation" .. animName)); // "ZSAnimation" is added to the string automatically by New()
 		anim.Initialize();
 		anim.MakeFrameList();
 		anim.LinkList();
@@ -518,11 +527,11 @@ Class ZSAnimator : Thinker
 	// This function can be used to start an animation directly and let ZSAnimator handle everything.
 	void StartAnimation(PlayerInfo ply, ZSAnimation anim, int frame = 0, int endFrame = 0, double playbackSpeed = 1.0)
 	{
-		playbackSpeed *= CVar.FindCVar("zsa_playbackSpeed").GetFloat();
-		/*let anim = ZSAnimation(New(animationClass));
+		//playbackSpeed *= CVar.FindCVar("zsa_playbackSpeed").GetFloat();
+/* 		let anim = ZSAnimation(New(animationClass));
 		anim.Initialize();
 		anim.MakeFrameList();
-		anim.LinkList();*/
+		anim.LinkList(); */
 		self.ply = ply;
 		
 		if (playbackSpeed >= 0)
