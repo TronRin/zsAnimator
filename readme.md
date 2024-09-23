@@ -1,3 +1,5 @@
+### ALL CREDIT TO @recurracy3 !!! I simply did some temp fixes until the OG author adds fixes for those(and possibly more). But as it currently stands, the og repository (export_zsa.py especially) were unusable. I succesfully exported animations with the current changes. the two restored checkboxes are useless i believe, but now the blender addon exports the animations zscript correctly!!!
+
 ### Please consider supporting me
 https://ko-fi.com/recurracy
 
